@@ -22,21 +22,27 @@
 
         <form:input id="cassaName" path="cassaName"/>
         <label for="cassaName">Название кассы</label>
+        <form:errors cssStyle="color: red" path="cassaName"/>
 
         <form:input id="prefix" path="prefix"/>
         <label for="prefix">Prefix</label>
+        <form:errors cssStyle="color: red" path="prefix"/>
 
         <form:input id="ammy" path="ammy"/>
         <label for="ammy">Ammy</label>
+        <form:errors cssStyle="color: red" path="ammy"/>
 
         <form:input id="computerName" path="computerName"/>
         <label for="computerName">Имя компьютера</label>
+        <form:errors cssStyle="color: red" path="computerName"/>
 
         <form:input id="cassaAdres" path="cassaAdres"/>
         <label for="cassaAdres">Адрес</label>
+        <form:errors cssStyle="color: red" path="cassaAdres"/>
 
         <form:input path="simNumber"/>
         <label for="simNumber">Номер sim-карты</label>
+        <form:errors cssStyle="color: red" path="simNumber"/>
         <br>
 
         <input class="waves-effect waves-light btn-small" type="submit" value="OK">

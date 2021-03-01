@@ -10,10 +10,18 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+<%--Подключаем header--%>
+<jsp:include page="header.jsp"/>
+
 <h2>Кассовые узлы</h2>
-<table>
+<input class="waves-effect waves-light btn-small" type="button" value="Добавить"
+       onclick="window.location.href = 'addNewCassa'"/>
+<table class="highlight myTable">
     <tr>
         <th>Название кассы</th>
         <th>prefix</th>
@@ -39,14 +47,17 @@
             <td>${items.cassaAdres}</td>
             <td>${items.simNumber}</td>
             <td>
-                <input type="button" value="Update" onclick="window.location.href= '${updateButton}'"/>
-                <input type="button" value="Delete" onclick="window.location.href= '${deleteButton}'"/>
+                <input class="waves-effect waves-light btn-small" type="button" value="Изменить" onclick="window.location.href= '${updateButton}'"/>
+                <input class="waves-effect red lighten-2 btn-small" type="button" value="Удалить" onclick="window.location.href= '${deleteButton}'"/>
             </td>
         </tr>
 
     </c:forEach>
 </table>
-<input type="button" value="Добавить"
-        onclick="window.location.href = '<c:url value="/cassa"/>'"/>
+<br>
+<input class="waves-effect waves-light btn-small" type="button" value="Добавить"
+        onclick="window.location.href = 'addNewCassa'"/>
+<br>
+
 </body>
 </html>

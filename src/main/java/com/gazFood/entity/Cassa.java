@@ -1,6 +1,8 @@
 package com.gazFood.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "cassa")
@@ -11,27 +13,39 @@ public class Cassa {
     private int id;
 
     @Column(name = "cassaName")
+    @Size(min=2,max=100)
+    @NotBlank(message = "Название кассы не может быть пустым")
     private String cassaName;
 
     @Column(name = "prefix")
+    @Size(min = 1, max=15)
+    @NotBlank(message = "Prefix не может быть пустым")
     private String prefix;
 
     @Column(name = "ammy")
+    @Size(min = 1, max=10)
+    @NotBlank(message = "Ammy не может быть пустым")
     private String ammy;
 
     @Column(name ="computerName")
+    @Size(min = 1, max=25)
+    @NotBlank(message = "Имя компьютера не может быть пустым")
     private String computerName;
 
     @Column(name = "cassaAdres")
+    @Size(min = 1, max=150)
+    @NotBlank(message = "Адрес не может быть пустым")
     private String cassaAdres;
 
     @Column(name = "simNumber")
-    private Long simNumber;
+    @Size(min = 1, max=10)
+    @NotBlank(message = "Поле не может быть пустым")
+    private String simNumber;
 
     public Cassa() {
     }
 
-    public Cassa(String cassaName, String prefix, String ammy, String computerName, String cassaAdres, Long simNumber) {
+    public Cassa(String cassaName, String prefix, String ammy, String computerName, String cassaAdres, String simNumber) {
         this.cassaName = cassaName;
         this.prefix = prefix;
         this.ammy = ammy;
@@ -88,11 +102,11 @@ public class Cassa {
         this.cassaAdres = cassaAdres;
     }
 
-    public Long getSimNumber() {
+    public String getSimNumber() {
         return simNumber;
     }
 
-    public void setSimNumber(Long simNumber) {
+    public void setSimNumber(String simNumber) {
         this.simNumber = simNumber;
     }
 }
