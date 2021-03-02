@@ -1,7 +1,5 @@
 package com.gazFood.dao;
-
 import com.gazFood.entity.Cassa;
-
 import java.util.List;
 
 public interface CassaDAO {

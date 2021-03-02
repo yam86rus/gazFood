@@ -18,7 +18,7 @@
 <%--Подключаем header--%>
 <jsp:include page="header.jsp"/>
 
-<h2>Кассовые узлы</h2>
+<h2>Кассовые узлы: (${allCassa.size()} шт.) </h2>
 <input class="waves-effect waves-light btn-small" type="button" value="Добавить"
        onclick="window.location.href = 'addNewCassa'"/>
 <table class="highlight myTable">

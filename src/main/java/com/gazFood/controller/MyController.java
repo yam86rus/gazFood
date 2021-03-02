@@ -1,7 +1,9 @@
 package com.gazFood.controller;
 
 import com.gazFood.entity.Cassa;
+import com.gazFood.entity.Departments;
 import com.gazFood.service.CassaService;
+import com.gazFood.service.DepartmentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,6 +19,8 @@ import java.util.List;
 public class MyController {
     @Autowired
     private CassaService cassaService;
+    @Autowired
+    private DepartmentsService departmentsService;
 
     @RequestMapping("/")
     public String showMain() {
@@ -44,7 +48,6 @@ public class MyController {
         } else {
             cassaService.saveCassa(cassa);
             return "redirect:/cassa";
-
         }
     }
 
@@ -60,4 +63,40 @@ public class MyController {
         cassaService.deleteCassa(id);
         return "redirect:/cassa";
     }
+
+    @RequestMapping("/departments")
+    public String getAllDepartments(Model model) {
+        List<Departments> allDepartments = departmentsService.getAllDepartments();
+        model.addAttribute("allDeprts", allDepartments);
+        return "all-departments";
+    }
+
+    @RequestMapping("/addNewDepartment")
+    public String addNewDepartment(Model model) {
+        Departments departments = new Departments();
+        model.addAttribute("departments", departments);
+        return "departments-info";
+    }
+
+    @RequestMapping("/saveDepartment")
+    public String saveDepartment(@ModelAttribute("department") Departments departments) {
+
+        departmentsService.saveDepartment(departments);
+        return "redirect:/departments";
+    }
+
+    @RequestMapping("/updateDepartment")
+    public String updateDepartment(@RequestParam("departmentId") int id, Model model) {
+        Departments departments = departmentsService.getDepartment(id);
+        model.addAttribute("department", departments);
+        return "departments-info";
+    }
+
+    @RequestMapping("/deleteDepartment")
+    public String deleteDepartment(@RequestParam("departmentId") int id) {
+        departmentsService.deleteDepartment(id);
+        return "redirect:/departments";
+    }
 }
+
+
