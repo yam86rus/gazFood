@@ -13,6 +13,7 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="<c:url value="/cassa"/>">Кассовые узлы</a></li>
             <li><a href="<c:url value="/departments"/>">Департаменты</a></li>
+            <li><a href="<c:url value="/city"/>">Города</a></li>
             <li><a href="#">Сотрудники</a></li>
         </ul>
     </div>

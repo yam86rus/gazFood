@@ -9,7 +9,7 @@ public interface DepartmentsDAO {
 
     public void saveDepartment(Departments departments);
 
-    public Departments getDepartment(int id);
+    public Departments  getDepartment(int id);
 
     public void deleteDepartment(int id);
 }

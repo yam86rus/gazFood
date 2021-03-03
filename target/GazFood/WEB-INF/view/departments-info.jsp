@@ -22,6 +22,7 @@
 
         <form:input id="department" path="department"/>
         <label for="department">Название департамента</label>
+        <form:errors cssStyle="color: red" path="department"/>
 <%--        <form:errors cssStyle="color: red" path="department"/>--%>
         <br>
         <input class="waves-effect waves-light btn-small" type="submit" value="OK">

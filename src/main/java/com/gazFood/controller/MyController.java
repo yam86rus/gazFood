@@ -1,8 +1,12 @@
 package com.gazFood.controller;
 
+import com.gazFood.dao.CassaDAO;
+import com.gazFood.dao.CityDAO;
 import com.gazFood.entity.Cassa;
+import com.gazFood.entity.City;
 import com.gazFood.entity.Departments;
 import com.gazFood.service.CassaService;
+import com.gazFood.service.CityService;
 import com.gazFood.service.DepartmentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +25,8 @@ public class MyController {
     private CassaService cassaService;
     @Autowired
     private DepartmentsService departmentsService;
+    @Autowired
+    private CityService cityService;
 
     @RequestMapping("/")
     public String showMain() {
@@ -79,16 +85,19 @@ public class MyController {
     }
 
     @RequestMapping("/saveDepartment")
-    public String saveDepartment(@ModelAttribute("department") Departments departments) {
-
-        departmentsService.saveDepartment(departments);
-        return "redirect:/departments";
+    public String saveDepartment(@Valid @ModelAttribute("departments") Departments departments, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "departments-info";
+        } else {
+            departmentsService.saveDepartment(departments);
+            return "redirect:/departments";
+        }
     }
 
     @RequestMapping("/updateDepartment")
     public String updateDepartment(@RequestParam("departmentId") int id, Model model) {
         Departments departments = departmentsService.getDepartment(id);
-        model.addAttribute("department", departments);
+        model.addAttribute("departments", departments);
         return "departments-info";
     }
 
@@ -96,6 +105,13 @@ public class MyController {
     public String deleteDepartment(@RequestParam("departmentId") int id) {
         departmentsService.deleteDepartment(id);
         return "redirect:/departments";
+    }
+
+    @RequestMapping("/city")
+    public String showAllCity(Model model) {
+        List<City> allCities = cityService.getAllCities();
+        model.addAttribute("allCities",allCities);
+        return "all-city";
     }
 }
 

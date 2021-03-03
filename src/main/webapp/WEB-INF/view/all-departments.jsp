@@ -16,36 +16,36 @@
 <body>
 <%--Подключаем header--%>
 <jsp:include page="header.jsp"/>
-<h2>Департаменты: ${allDeprts.size()} шт.</h2>
-<input class="waves-effect waves-light btn-small" type="button" value="Добавить"
-       onclick="window.location.href = 'addNewDepartment'"/>
-<table>
-    <tr>
-        <th>Департамент</th>
-    </tr>
-    <c:forEach var="deps" items="${allDeprts}">
-
-        <c:url var="updateButton" value="/updateDepartment">
-            <c:param name="departmentId" value="${deps.id}"/>
-        </c:url>
-        <c:url var="deleteButton" value="/deleteDepartment">
-            <c:param name="departmentId" value="${deps.id}"/>
-        </c:url>
-
-        <%--        <c:url var="deleteButton" value="/deleteDepartment">--%>
-        <%--            <c:param name="cassaId" value="${items.id}"/>--%>
-        <%--        </c:url>--%>
+<div class="container">
+    <h2>Департаменты: ${allDeprts.size()} шт.</h2>
+    <input class="waves-effect waves-light btn-small" type="button" value="Добавить"
+           onclick="window.location.href = 'addNewDepartment'"/>
+    <table class="highlight" >
         <tr>
-            <td>${deps.department}</td>
-            <td>
-                <input class="waves-effect waves-light btn-small" type="button" value="Изменить"
-                       onclick="window.location.href= '${updateButton}'"/>
-                <input class="waves-effect red lighten-2 btn-small" type="button" value="Удалить"
-                       onclick="window.location.href= '${deleteButton}'"/></td>
+            <th>Департамент</th>
+            <th>Операции</th>
         </tr>
-    </c:forEach>
-</table>
-<br>
+        <c:forEach var="deps" items="${allDeprts}">
 
+            <c:url var="updateButton" value="/updateDepartment">
+                <c:param name="departmentId" value="${deps.id}"/>
+            </c:url>
+
+            <c:url var="deleteButton" value="/deleteDepartment">
+                <c:param name="departmentId" value="${deps.id}"/>
+            </c:url>
+
+            <tr>
+                <td>${deps.department}</td>
+                <td>
+                    <input class="waves-effect waves-light btn-small" type="button" value="Изменить"
+                           onclick="window.location.href= '${updateButton}'"/>
+                    <input class="waves-effect red lighten-2 btn-small" type="button" value="Удалить"
+                           onclick="window.location.href= '${deleteButton}'"/>
+                </td>
+            </tr>
+        </c:forEach>
+    </table>
+</div>
 </body>
 </html>
