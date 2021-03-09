@@ -41,8 +41,12 @@
         <form:errors cssStyle="color: red" path="cassaAdres"/>
 
         <form:input path="simNumber"/>
-        <label for="simNumber">Номер sim-карты</label>
+        <label for="simNumber">Обновление</label>
         <form:errors cssStyle="color: red" path="simNumber"/>
+
+        <form:input path="planUpdate"/>
+        <label for="planUpdate">Плановая дата обновления</label>
+        <form:errors cssStyle="color: red" path="planUpdate"/>
         <br>
 
         <input class="waves-effect waves-light btn-small" type="submit" value="OK">

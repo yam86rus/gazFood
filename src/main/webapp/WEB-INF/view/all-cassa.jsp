@@ -28,7 +28,8 @@
         <th>ammy</th>
         <th>Имя компьютера</th>
         <th>Адрес установки</th>
-        <th>Номер телефона</th>
+        <th>Обновление</th>
+        <th>Плановая дата обновления</th>
         <th>Операции</th>
     </tr>
     <c:forEach var="items" items="${allCassa}">
@@ -46,9 +47,10 @@
             <td>${items.computerName}</td>
             <td>${items.cassaAdres}</td>
             <td>${items.simNumber}</td>
+            <td>${items.planUpdate}</td>
             <td>
                 <input class="waves-effect waves-light btn-small" type="button" value="Изменить" onclick="window.location.href= '${updateButton}'"/>
-                <input class="waves-effect red lighten-2 btn-small" type="button" value="Удалить" onclick="window.location.href= '${deleteButton}'"/>
+<%--                <input class="waves-effect red lighten-2 btn-small" type="button" value="Удалить" onclick="window.location.href= '${deleteButton}'"/>--%>
             </td>
         </tr>
 
@@ -60,4 +62,6 @@
 <br>
 
 </body>
+
+<script src="js/all-cassa.js"></script>
 </html>

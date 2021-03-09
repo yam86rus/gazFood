@@ -38,11 +38,26 @@ public class Cassa {
     private String cassaAdres;
 
     @Column(name = "simNumber")
-    @Size(min = 1, max=10)
+    @Size(min = 1, max=50)
     @NotBlank(message = "Поле не может быть пустым")
     private String simNumber;
 
+    @Column(name = "planUpdate")
+    @Size(min = 1, max = 10)
+    @NotBlank(message = "Поле не может быть пустым")
+    private String planUpdate;
+
     public Cassa() {
+    }
+
+    public Cassa(String cassaName, String prefix, String ammy, String computerName, String cassaAdres, String simNumber, String planUpdate) {
+        this.cassaName = cassaName;
+        this.prefix = prefix;
+        this.ammy = ammy;
+        this.computerName = computerName;
+        this.cassaAdres = cassaAdres;
+        this.simNumber = simNumber;
+        this.planUpdate = planUpdate;
     }
 
     public Cassa(String cassaName, String prefix, String ammy, String computerName, String cassaAdres, String simNumber) {
@@ -53,6 +68,8 @@ public class Cassa {
         this.cassaAdres = cassaAdres;
         this.simNumber = simNumber;
     }
+
+
 
     public int getId() {
         return id;
@@ -108,5 +125,13 @@ public class Cassa {
 
     public void setSimNumber(String simNumber) {
         this.simNumber = simNumber;
+    }
+
+    public String getPlanUpdate() {
+        return planUpdate;
+    }
+
+    public void setPlanUpdate(String planUpdate) {
+        this.planUpdate = planUpdate;
     }
 }

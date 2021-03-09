@@ -21,6 +21,8 @@
 
     <mvc:annotation-driven/>
     <mvc:resources mapping="/css/**" location="/WEB-INF/view/css/"/>
+    <mvc:resources mapping="/js/**" location="/WEB-INF/view/js/"/>
+    <mvc:resources mapping="/img/**" location="/WEB-INF/view/img/"/>
     <aop:aspectj-autoproxy/>
 
     <bean
