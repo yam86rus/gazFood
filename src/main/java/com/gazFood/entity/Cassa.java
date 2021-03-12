@@ -47,10 +47,38 @@ public class Cassa {
     @NotBlank(message = "Поле не может быть пустым")
     private String planUpdate;
 
+    @Column(name = "anyDesk")
+    @Size(min = 1, max = 9)
+    @NotBlank(message = "Поле не может быть пустым")
+    private String anyDesk;
+
+    @Column(name = "fnDeadLineData")
+    @Size(min = 1, max =10 )
+    @NotBlank(message = "Поле не может быть пустым")
+    private String fnDeadLineData;
+
+    @Column(name = "kpp")
+    @Size(min = 1, max = 9)
+    @NotBlank(message = "Поле не может быть пустым")
+    private String kpp;
+
+    @Column(name = "rnkkt")
+    @Size(min = 1, max = 19)
+    @NotBlank(message = "Поле не может быть пустым")
+    private String rnkkt;
+
+    @Column(name = "fnNumber")
+    @Size(min = 1, max = 16)
+    @NotBlank(message = "Поле не может быть пустым")
+    private String fnNumber;
+
+
+
     public Cassa() {
     }
 
-    public Cassa(String cassaName, String prefix, String ammy, String computerName, String cassaAdres, String simNumber, String planUpdate) {
+    public Cassa(String cassaName, String prefix, String ammy, String computerName, String cassaAdres,
+                 String simNumber, String planUpdate, String anyDesk, String fnDeadLineData, String kpp, String rnkkt, String fnNumber) {
         this.cassaName = cassaName;
         this.prefix = prefix;
         this.ammy = ammy;
@@ -58,18 +86,21 @@ public class Cassa {
         this.cassaAdres = cassaAdres;
         this.simNumber = simNumber;
         this.planUpdate = planUpdate;
-    }
-
-    public Cassa(String cassaName, String prefix, String ammy, String computerName, String cassaAdres, String simNumber) {
-        this.cassaName = cassaName;
-        this.prefix = prefix;
-        this.ammy = ammy;
-        this.computerName = computerName;
-        this.cassaAdres = cassaAdres;
-        this.simNumber = simNumber;
+        this.anyDesk = anyDesk;
+        this.fnDeadLineData = fnDeadLineData;
+        this.kpp = kpp;
+        this.rnkkt=rnkkt;
+        this.fnNumber = fnNumber;
     }
 
 
+    public String getAnyDesk() {
+        return anyDesk;
+    }
+
+    public void setAnyDesk(String anyDesk) {
+        this.anyDesk = anyDesk;
+    }
 
     public int getId() {
         return id;
@@ -133,5 +164,37 @@ public class Cassa {
 
     public void setPlanUpdate(String planUpdate) {
         this.planUpdate = planUpdate;
+    }
+
+    public String getFnDeadLineData() {
+        return fnDeadLineData;
+    }
+
+    public void setFnDeadLineData(String fnDeadLineData) {
+        this.fnDeadLineData = fnDeadLineData;
+    }
+
+    public String getKpp() {
+        return kpp;
+    }
+
+    public void setKpp(String kpp) {
+        this.kpp = kpp;
+    }
+
+    public String getRnkkt() {
+        return rnkkt;
+    }
+
+    public void setRnkkt(String rnkkt) {
+        this.rnkkt = rnkkt;
+    }
+
+    public String getFnNumber() {
+        return fnNumber;
+    }
+
+    public void setFnNumber(String fnNumber) {
+        this.fnNumber = fnNumber;
     }
 }

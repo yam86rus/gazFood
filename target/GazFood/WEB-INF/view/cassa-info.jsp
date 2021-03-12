@@ -47,8 +47,28 @@
         <form:input path="planUpdate"/>
         <label for="planUpdate">Плановая дата обновления</label>
         <form:errors cssStyle="color: red" path="planUpdate"/>
-        <br>
 
+        <form:input id="anyDesk" path="anyDesk"/>
+        <label for="anyDesk">AnyDesk</label>
+        <form:errors cssStyle="color: red" path="anyDesk"/>
+
+        <form:input id="fnDeadLineData" path="fnDeadLineData"/>
+        <label for="anyDesk">Срок деййствия ФН</label>
+        <form:errors cssStyle="color: red" path="fnDeadLineData"/>
+
+        <form:input id="kpp" path="kpp"/>
+        <label for="anyDesk">КПП</label>
+        <form:errors cssStyle="color: red" path="kpp"/>
+
+        <form:input id="" path="rnkkt"/>
+        <label for="anyDesk">Срок действия ФН</label>
+        <form:errors cssStyle="color: red" path="kpp"/>
+
+        <form:input id="" path="fnNumber"/>
+        <label for="anyDesk">Заводской номер фискального накопителя:</label>
+        <form:errors cssStyle="color: red" path="kpp"/>
+
+        <br>
         <input class="waves-effect waves-light btn-small" type="submit" value="OK">
         <input class="waves-effect yellow black-text btn-small" type="button" value="Отмена"
                onclick="window.location.href = '/cassa'"/>

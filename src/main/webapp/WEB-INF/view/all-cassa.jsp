@@ -25,11 +25,16 @@
     <tr>
         <th>Название кассы</th>
         <th>prefix</th>
-        <th>ammy</th>
+        <th>Ammyy Admin</th>
+        <th>AnyDesk</th>
         <th>Имя компьютера</th>
-        <th>Адрес установки</th>
+<%--        <th>Адрес установки</th>--%>
         <th>Обновление</th>
         <th>Плановая дата обновления</th>
+        <th>Срок окончания действия ФН</th>
+        <th>КПП</th>
+        <th>РН ККТ</th>
+        <th>Номер ФН</th>
         <th>Операции</th>
     </tr>
     <c:forEach var="items" items="${allCassa}">
@@ -44,10 +49,15 @@
             <td>${items.cassaName}</td>
             <td>${items.prefix}</td>
             <td>${items.ammy}</td>
+            <td>${items.anyDesk}</td>
             <td>${items.computerName}</td>
-            <td>${items.cassaAdres}</td>
+<%--            <td>${items.cassaAdres}</td>--%>
             <td>${items.simNumber}</td>
             <td>${items.planUpdate}</td>
+            <td>${items.fnDeadLineData}</td>
+            <td>${items.kpp}</td>
+            <td>${items.rnkkt}</td>
+            <td>${items.fnNumber}</td>
             <td>
                 <input class="waves-effect waves-light btn-small" type="button" value="Изменить" onclick="window.location.href= '${updateButton}'"/>
 <%--                <input class="waves-effect red lighten-2 btn-small" type="button" value="Удалить" onclick="window.location.href= '${deleteButton}'"/>--%>
