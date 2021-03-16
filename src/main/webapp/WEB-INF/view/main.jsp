@@ -11,11 +11,20 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="css/materialize.css">
+    <link rel="stylesheet" href="css/main.css.css">
 </head>
 <body>
-
+<div class="page">
 <%--Подключаем header--%>
 <jsp:include page="header.jsp"/>
+
+
+
+
+
+<%--Подключаем footer--%>
+<jsp:include page="footer.jsp"/>
+</div>
 
 <%--<blockquote>--%>
 <%--    <p>Каждый живой, каждый настоящий — вселенски, безобразно одинок.--%>

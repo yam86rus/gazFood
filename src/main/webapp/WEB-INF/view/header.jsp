@@ -9,13 +9,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <nav>
     <div class="nav-wrapper blue">
+        <div class="container">
 
-        <a href="<c:url value="/"/>" class="brand-logo"><img src="img/logo3.png" alt="logo"></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="<c:url value="/cassa"/>">Кассовые узлы</a></li>
-            <li><a href="<c:url value="/departments"/>">Департаменты</a></li>
-            <li><a href="<c:url value="/city"/>">Города</a></li>
-            <li><a href="#">Сотрудники</a></li>
-        </ul>
+
+            <a href="<c:url value="/"/>" class="brand-logo"><img src="img/logo3.png" alt="logo"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="<c:url value="/cassa"/>">Кассовые узлы</a></li>
+                <li><a href="<c:url value="/departments"/>">Департаменты</a></li>
+                <li><a href="<c:url value="/city"/>">Города</a></li>
+                <li><a href="#">Сотрудники</a></li>
+            </ul>
+
+        </div>
     </div>
 </nav>

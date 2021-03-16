@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/materialize.css">
 </head>
 <body>
-
+<div class="page">
 <%--Подключаем header--%>
 <jsp:include page="header.jsp"/>
 <div class="container">
@@ -31,6 +31,8 @@
         </c:forEach>
     </table>
 </div>
-
+<%--Подключаем footer--%>
+<jsp:include page="footer.jsp"/>
+</div>
 </body>
 </html>
