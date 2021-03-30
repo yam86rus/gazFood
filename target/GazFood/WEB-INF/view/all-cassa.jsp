@@ -24,7 +24,8 @@
         <input class="waves-effect waves-light btn-small" type="button" value="Добавить"
                onclick="window.location.href = 'addNewCassa'"/>
     </div>
-    <table class="highlight myTable">
+    <table class="highlight myTable" id="sortable">
+        <tbody>
         <thead>
         <tr>
             <th>Название кассы</th>
@@ -42,38 +43,38 @@
             <th>Операции</th>
         </tr>
         </thead>
-        <tbody>
+
         <c:forEach var="items" items="${allCassa}">
-        <c:url var="updateButton" value="/updateInfo">
-            <c:param name="cassaId" value="${items.id}"/>
-        </c:url>
+            <c:url var="updateButton" value="/updateInfo">
+                <c:param name="cassaId" value="${items.id}"/>
+            </c:url>
 
-        <c:url var="deleteButton" value="/deleteCassa">
-            <c:param name="cassaId" value="${items.id}"/>
-        </c:url>
+            <c:url var="deleteButton" value="/deleteCassa">
+                <c:param name="cassaId" value="${items.id}"/>
+            </c:url>
 
-        <tr>
-            <td>${items.cassaName}</td>
-            <td>${items.prefix}</td>
-            <td>${items.ammy}</td>
-            <td>${items.anyDesk}</td>
-            <td>${items.computerName}</td>
-                <%--            <td>${items.cassaAdres}</td>--%>
-            <td>${items.simNumber}</td>
-            <td>${items.planUpdate}</td>
-            <td>${items.fnDeadLineData}</td>
-            <td>${items.kpp}</td>
-            <td>${items.rnkkt}</td>
-            <td>${items.fnNumber}</td>
-            <td>
-                <input class="waves-effect waves-light btn-small" type="button" value="Изменить"
-                       onclick="window.location.href= '${updateButton}'"/>
-                    <%--                <input class="waves-effect red lighten-2 btn-small" type="button" value="Удалить" onclick="window.location.href= '${deleteButton}'"/>--%>
-            </td>
-        </tr>
+            <tr>
+                <td>${items.cassaName}</td>
+                <td class="content">${items.prefix}</td>
+                <td class="content">${items.ammy}</td>
+                <td>${items.anyDesk}</td>
+                <td>${items.computerName}</td>
+                    <%--            <td>${items.cassaAdres}</td>--%>
+                <td>${items.simNumber}</td>
+                <td>${items.planUpdate}</td>
+                <td>${items.fnDeadLineData}</td>
+                <td>${items.kpp}</td>
+                <td>${items.rnkkt}</td>
+                <td>${items.fnNumber}</td>
+                <td>
+                    <input class="waves-effect waves-light btn-small" type="button" value="Изменить"
+                           onclick="window.location.href= '${updateButton}'"/>
+                        <%--                <input class="waves-effect red lighten-2 btn-small" type="button" value="Удалить" onclick="window.location.href= '${deleteButton}'"/>--%>
+                </td>
+            </tr>
 
         </c:forEach>
-        <tbody>
+        </tbody>
     </table>
     <br>
     <div>

@@ -20,7 +20,7 @@ public class CassaDAOImpl implements CassaDAO {
     public List<Cassa> getAllCassa() {
         Session session = sessionFactory.getCurrentSession();
 
-        Query<Cassa> query = session.createQuery("from Cassa order by prefix", Cassa.class);
+        Query<Cassa> query = session.createQuery("from Cassa order by cassaName", Cassa.class);
         List<Cassa> allCassa = query.getResultList();
         return allCassa;
     }
