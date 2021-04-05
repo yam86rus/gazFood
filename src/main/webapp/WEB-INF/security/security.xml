@@ -8,9 +8,12 @@
 <!--    https://www.tutorialspoint.com/spring_security/spring_security_with_xml_configuration.htm-->
 
     <http auto-config="true" >
-        <intercept-url pattern="/" access="authenticated"/>
         <intercept-url pattern="/cassa" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN')" />
-        <intercept-url pattern="/departments" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN','ROLE_SECRETARY')" />
+        <intercept-url pattern="/departments" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN')" />
+        <intercept-url pattern="/employees" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN','ROLE_SECRETARY')" />
+        <intercept-url pattern="/addNewEmployee" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN','ROLE_SECRETARY')" />
+        <intercept-url pattern="/deleteEmployee" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN','ROLE_SECRETARY')" />
+        <intercept-url pattern="/saveEmployee" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN','ROLE_SECRETARY')" />
     </http>
 
     <authentication-manager>

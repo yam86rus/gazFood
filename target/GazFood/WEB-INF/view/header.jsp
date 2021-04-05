@@ -11,17 +11,32 @@
                     <li><a href="<c:url value="/cassa"/>">Кассовые узлы</a></li>
                 </security:authorize>
 
-                <li><a href="<c:url value="/departments"/>">Департаменты</a></li>
-                <li><a href="<c:url value="/city"/>">Города</a></li>
-                <li><a href="#">Сотрудники</a></li>
-                <li>Hello <b><c:out value="${pageContext.request.remoteUser}"/></b></li>
+                <security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN','SECRETARY')">
+                    <li><a href="<c:url value="/employees"/>">Сотрудники</a></li>
+                </security:authorize>
+
+                <security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN')">
+                    <li><a href="<c:url value="/departments"/>">Департаменты</a></li>
+                </security:authorize>
+
+                <security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN')">
+                    <li><a href="<c:url value="/city"/>">Города</a></li>
+                </security:authorize>
+
+                <security:authorize access="isAuthenticated()">
+                    <li>Hello, <b><c:out value="${pageContext.request.remoteUser}"/></b></li>
+                </security:authorize>
+
                 <c:url var="logoutUrl" value="/logout"/>
-                <li>
-                        <form class="form-inline" action="${logoutUrl}" method="post">
-                            <input type="submit" value="выйти"/>
-                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                        </form>
-                </li>
+                <%--                <li>--%>
+                <%--                    <form class="form-inline" action="${logoutUrl}" method="post">--%>
+                <%--                        <input type="submit" value="выйти"/>--%>
+                <%--                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
+                <%--                    </form>--%>
+                <%--                </li>--%>
+                <security:authorize access="isAuthenticated()">
+                    <li><a href="<c:url value="/logout"/>">Выйти</a></li>
+                </security:authorize>
             </ul>
         </div>
     </div>
