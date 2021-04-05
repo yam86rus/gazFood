@@ -13,7 +13,7 @@
 </head>
     <div class="my-page-footer blue">
         <div class="container" style="color: white">
-            © 2020 Газпром Питание
+            © 2021 Газпром Питание
         </div>
     </div>
 

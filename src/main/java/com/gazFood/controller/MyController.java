@@ -1,7 +1,5 @@
 package com.gazFood.controller;
 
-import com.gazFood.dao.CassaDAO;
-import com.gazFood.dao.CityDAO;
 import com.gazFood.entity.Cassa;
 import com.gazFood.entity.City;
 import com.gazFood.entity.Departments;
