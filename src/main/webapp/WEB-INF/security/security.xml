@@ -14,6 +14,10 @@
         <intercept-url pattern="/addNewEmployee" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN','ROLE_SECRETARY')" />
         <intercept-url pattern="/deleteEmployee" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN','ROLE_SECRETARY')" />
         <intercept-url pattern="/saveEmployee" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN','ROLE_SECRETARY')" />
+        <intercept-url pattern="/vacancies" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN','ROLE_HR')" />
+        <intercept-url pattern="/addNewVacancy" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN','ROLE_HR')" />
+        <intercept-url pattern="/saveVacancy" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN','ROLE_HR')" />
+        <intercept-url pattern="/updateVacancy" access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN','ROLE_HR')" />
     </http>
 
     <authentication-manager>

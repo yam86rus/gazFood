@@ -15,6 +15,12 @@
                     <li><a href="<c:url value="/employees"/>">Сотрудники</a></li>
                 </security:authorize>
 
+                <security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN','ROLE_HR')">
+                    <li><a href="<c:url value="/vacancies"/>">Вакансии</a></li>
+                </security:authorize>
+
+
+
                 <security:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_SUPERADMIN')">
                     <li><a href="<c:url value="/departments"/>">Департаменты</a></li>
                 </security:authorize>

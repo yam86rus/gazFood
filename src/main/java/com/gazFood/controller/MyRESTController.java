@@ -3,9 +3,11 @@ package com.gazFood.controller;
 import com.gazFood.entity.City;
 import com.gazFood.entity.Departments;
 import com.gazFood.entity.Employee;
+import com.gazFood.entity.Vacancy;
 import com.gazFood.service.CityService;
 import com.gazFood.service.DepartmentsService;
 import com.gazFood.service.EmployeeService;
+import com.gazFood.service.VacancyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +28,9 @@ public class MyRESTController {
     @Autowired
     private DepartmentsService departmentsService;
 
+    @Autowired
+    private VacancyService vacancyService;
+
     @GetMapping("/employees")
     public List<Employee> showAllEmployees() {
         List<Employee> allEmployees = employeeService.getAllEmployees();
@@ -42,6 +47,12 @@ public class MyRESTController {
     public List<Departments> showAllDepartments() {
         List<Departments> allDepartments = departmentsService.getAllDepartments();
         return allDepartments;
+    }
+
+    @GetMapping("/vacancies")
+    public List<Vacancy> showAllVacancies(){
+        List<Vacancy> allVacancies = vacancyService.getAllVacancies();
+        return allVacancies;
     }
 
 
