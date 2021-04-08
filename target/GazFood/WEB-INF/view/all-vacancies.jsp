@@ -40,7 +40,9 @@
                     <td>${vacancy.contacts}</td>
                     <td>
                         <input class="waves-effect waves-light btn-small" type="button" value="Изменить" onclick="window.location.href='${updateButton}'"/>
+                        <security:authorize access="hasAnyRole('ROLE_SUPERADMIN')">
                         <input class="waves-effect red lighten-2 btn-small" type="button" value="Удалить" onclick="window.location.href='${deleteButton}'"/>
+                        </security:authorize>
                     </td>
                 </tr>
             </c:forEach>
