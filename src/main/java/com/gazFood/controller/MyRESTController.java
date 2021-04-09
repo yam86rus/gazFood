@@ -10,6 +10,7 @@ import com.gazFood.service.EmployeeService;
 import com.gazFood.service.VacancyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -53,6 +54,12 @@ public class MyRESTController {
     public List<Vacancy> showAllVacancies(){
         List<Vacancy> allVacancies = vacancyService.getAllVacancies();
         return allVacancies;
+    }
+
+    @GetMapping("/vacancies/{id}")
+    public Vacancy getVacancy(@PathVariable int id){
+        Vacancy vacancy = vacancyService.getVacancy(id);
+        return vacancy;
     }
 
 
