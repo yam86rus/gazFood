@@ -4,17 +4,19 @@ import com.gazFood.entity.City;
 import com.gazFood.entity.Departments;
 import com.gazFood.entity.Employee;
 import com.gazFood.entity.Vacancy;
+import com.gazFood.exception_handling.NoSuchVacancyException;
+import com.gazFood.exception_handling.VacanciesIncorrectData;
 import com.gazFood.service.CityService;
 import com.gazFood.service.DepartmentsService;
 import com.gazFood.service.EmployeeService;
 import com.gazFood.service.VacancyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
@@ -32,8 +34,11 @@ public class MyRESTController {
     @Autowired
     private VacancyService vacancyService;
 
+    @CrossOrigin(origins = "http://localhost:8079/")
+
     @GetMapping("/employees")
-    public List<Employee> showAllEmployees() {
+    @ResponseStatus(value = HttpStatus.OK)
+    public List<Employee> showAllEmployees(@RequestHeader Map<String, String> headers) {
         List<Employee> allEmployees = employeeService.getAllEmployees();
         return allEmployees;
     }
@@ -51,16 +56,21 @@ public class MyRESTController {
     }
 
     @GetMapping("/vacancies")
-    public List<Vacancy> showAllVacancies(){
+    public List<Vacancy> showAllVacancies() {
         List<Vacancy> allVacancies = vacancyService.getAllVacancies();
         return allVacancies;
     }
 
     @GetMapping("/vacancies/{id}")
-    public Vacancy getVacancy(@PathVariable int id){
+    public Vacancy getVacancy(@PathVariable int id) {
         Vacancy vacancy = vacancyService.getVacancy(id);
+        if (vacancy == null) {
+            throw new NoSuchVacancyException("There is no vacancy with ID= " + id + " in Database");
+        }
         return vacancy;
     }
+
+
 
 
 }
