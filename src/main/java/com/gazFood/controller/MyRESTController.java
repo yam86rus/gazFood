@@ -54,6 +54,7 @@ public class MyRESTController {
         List<Departments> allDepartments = departmentsService.getAllDepartments();
         return allDepartments;
     }
+    @CrossOrigin(origins = "http://localhost:4200")
 
     @GetMapping("/vacancies")
     public List<Vacancy> showAllVacancies() {
