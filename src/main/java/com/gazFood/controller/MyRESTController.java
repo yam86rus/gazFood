@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@CrossOrigin(origins = {"https://gazpom-pitanie.web.app/", "https://localhost:4200"})
+@CrossOrigin(origins = {"https://gazpom-pitanie.web.app/", "http://localhost:4200"})
 @RequestMapping("/api")
 public class MyRESTController {
 
