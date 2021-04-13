@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@CrossOrigin(origins = {"https://gazpom-pitanie.web.app/", "https://localhost:4200"})
 @RequestMapping("/api")
 public class MyRESTController {
 
@@ -34,7 +35,6 @@ public class MyRESTController {
     @Autowired
     private VacancyService vacancyService;
 
-    @CrossOrigin(origins = "http://localhost:8079/")
 
     @GetMapping("/employees")
     @ResponseStatus(value = HttpStatus.OK)
@@ -54,9 +54,9 @@ public class MyRESTController {
         List<Departments> allDepartments = departmentsService.getAllDepartments();
         return allDepartments;
     }
-    @CrossOrigin(origins = "http://localhost:4200")
 
-    @GetMapping("/vacancies")
+
+    @GetMapping("/vacancies" )
     public List<Vacancy> showAllVacancies() {
         List<Vacancy> allVacancies = vacancyService.getAllVacancies();
         return allVacancies;
@@ -70,8 +70,6 @@ public class MyRESTController {
         }
         return vacancy;
     }
-
-
 
 
 }

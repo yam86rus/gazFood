@@ -15,6 +15,8 @@
     <jsp:include page="header.jsp"/>
     <div class="container">
         <h2>Вакансии ${allVacancies.size()} шт.</h2>
+        <input class="waves-effect waves-light btn-small" type="button" value="Добавить"
+               onclick="window.location.href = 'addNewVacancy'">
         <table class="highlight">
             <tr>
                 <th>Название вакансии</th>
@@ -40,7 +42,7 @@
                     <td>${vacancy.contacts}</td>
                     <td>
                         <input class="waves-effect waves-light btn-small" type="button" value="Изменить" onclick="window.location.href='${updateButton}'"/>
-                        <security:authorize access="hasAnyRole('ROLE_SUPERADMIN')">
+                        <security:authorize access="hasAnyRole('ROLE_SUPERADMIN','ROLE_HR')">
                         <input class="waves-effect red lighten-2 btn-small" type="button" value="Удалить" onclick="window.location.href='${deleteButton}'"/>
                         </security:authorize>
                     </td>
