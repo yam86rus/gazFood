@@ -31,9 +31,10 @@
             <th>Обновление</th>
             <th>Плановая дата обновления</th>
             <th>Срок окончания действия ФН</th>
-            <th>КПП</th>
-            <th>РН ККТ</th>
-            <th>Номер ФН</th>
+<%--            <th>КПП</th>--%>
+            <th>Мобильный</th>
+            <th>ICC</th>
+            <th>Телефон</th>
             <th>Операции</th>
         </tr>
         </thead>
@@ -57,9 +58,12 @@
                 <td>${items.simNumber}</td>
                 <td>${items.planUpdate}</td>
                 <td>${items.fnDeadLineData}</td>
-                <td>${items.kpp}</td>
-                <td>${items.rnkkt}</td>
-                <td>${items.fnNumber}</td>
+<%--                <td>${items.kpp}</td>--%>
+<%--                <td>${items.rnkkt}</td>--%>
+<%--                <td>${items.fnNumber}</td>--%>
+                <td>${items.mobileNumber}</td>
+                <td>${items.iccNumber}</td>
+                <td>${items.phoneNumber}</td>
                 <td>
                     <input class="waves-effect waves-light btn-small" type="button" value="Изменить"
                            onclick="window.location.href= '${updateButton}'"/>

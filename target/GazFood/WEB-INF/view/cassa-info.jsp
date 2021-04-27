@@ -61,6 +61,19 @@
         <label for="anyDesk">Заводской номер фискального накопителя:</label>
         <form:errors cssStyle="color: red" path="kpp"/>
 
+        <form:input id="" path="mobileNumber"/>
+        <label for="anyDesk">Мобильный номер</label>
+        <form:errors cssStyle="color: red" path="mobileNumber"/>
+
+        <form:input id="" path="iccNumber"/>
+        <label for="anyDesk">ICC</label>
+        <form:errors cssStyle="color: red" path="iccNumber"/>
+
+        <form:input id="" path="phoneNumber"/>
+        <label for="phoneNumber">Телефон</label>
+        <form:errors cssStyle="color: red" path="phoneNumber"/>
+
+
         <br>
         <input class="waves-effect waves-light btn-small" type="submit" value="OK">
         <input class="waves-effect yellow black-text btn-small" type="button" value="Отмена"

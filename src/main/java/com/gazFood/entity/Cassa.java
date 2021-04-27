@@ -72,13 +72,23 @@ public class Cassa {
     @NotBlank(message = "Поле не может быть пустым")
     private String fnNumber;
 
+    @Column(name = "mob_number")
+    @Size(max = 10)
+    private String mobileNumber;
+
+    @Column(name = "icc_number")
+    @Size(max = 20)
+    private String iccNumber;
+
+    @Column(name = "phone_number")
+    @Size(max = 50)
+    private String phoneNumber;
 
 
     public Cassa() {
     }
 
-    public Cassa(String cassaName, String prefix, String ammy, String computerName, String cassaAdres,
-                 String simNumber, String planUpdate, String anyDesk, String fnDeadLineData, String kpp, String rnkkt, String fnNumber) {
+    public Cassa(String cassaName, String prefix, String ammy, String computerName, String cassaAdres, String simNumber, String planUpdate, String anyDesk, String fnDeadLineData, String kpp, String rnkkt, String fnNumber, String mobileNumber, String iccNumber, String phoneNumber) {
         this.cassaName = cassaName;
         this.prefix = prefix;
         this.ammy = ammy;
@@ -89,10 +99,36 @@ public class Cassa {
         this.anyDesk = anyDesk;
         this.fnDeadLineData = fnDeadLineData;
         this.kpp = kpp;
-        this.rnkkt=rnkkt;
+        this.rnkkt = rnkkt;
         this.fnNumber = fnNumber;
+        this.mobileNumber = mobileNumber;
+        this.iccNumber = iccNumber;
+        this.phoneNumber = phoneNumber;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
+
+    public String getIccNumber() {
+        return iccNumber;
+    }
+
+    public void setIccNumber(String iccNumber) {
+        this.iccNumber = iccNumber;
+    }
 
     public String getAnyDesk() {
         return anyDesk;
